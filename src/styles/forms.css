@@ -1,0 +1,54 @@
+.job-form{
+
+margin-top:40px;
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:25px;
+
+}
+
+.job-form input,
+.job-form select{
+
+padding:18px;
+
+border:1px solid #ddd;
+
+border-radius:12px;
+
+font-size:16px;
+
+}
+
+.job-form button{
+
+grid-column:span 2;
+
+padding:18px;
+
+background:#2563eb;
+
+color:white;
+
+font-size:18px;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.job-form button:hover{
+
+background:#1d4ed8;
+
+transform:translateY(-3px);
+
+}
