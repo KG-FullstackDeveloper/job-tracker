@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import JobCard from "../components/JobCard";
 
 function SavedJobs() {
 
@@ -24,14 +24,45 @@ function SavedJobs() {
 
           jobs.map((job) => (
 
-            <JobCard
+            <div
+              className="job-card"
               key={job.id}
-              id={job.id}
-              title={job.title}
-              company={job.company}
-              location={job.location}
-              status={job.status}
-            />
+            >
+
+              <div>
+
+                <h2>{job.title}</h2>
+
+                <p>{job.company}</p>
+
+                <span>{job.location}</span>
+
+              </div>
+
+              <div className="job-status">
+
+                <span className="status">
+
+                  {job.status}
+
+                </span>
+
+                <Link
+                  to="/find-job-details"
+                  state={{ job }}
+                >
+
+                  <button>
+
+                    View Details
+
+                  </button>
+
+                </Link>
+
+              </div>
+
+            </div>
 
           ))
 

@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 
 function Sidebar() {
   const links = [
-    { name: "Dashboard", path: "/" },
-    { name: "All Jobs", path: "/jobs" },
-    { name: "Add Job", path: "/add-job" },
-    { name: "Saved Jobs", path: "/saved" },
-    { name: "Settings", path: "/settings" },
+  { name: "Dashboard", path: "/" },
+  { name: "All Jobs", path: "/jobs" },
+  { name: "🔍 Find Jobs", path: "/find-jobs" },
+  { name: "Add Job", path: "/add-job" },
+  { name: "Saved Jobs", path: "/saved" },
+  { name: "Settings", path: "/settings" },
   ];
 
   return (

@@ -10,12 +10,10 @@ function JobCard({
 }) {
 
   const [saved, setSaved] = useState(() => {
-
     const savedJobs =
       JSON.parse(localStorage.getItem("savedJobs")) || [];
 
     return savedJobs.some(job => job.id === id);
-
   });
 
   function handleSave() {
@@ -23,18 +21,18 @@ function JobCard({
     let savedJobs =
       JSON.parse(localStorage.getItem("savedJobs")) || [];
 
-    if(saved){
+    if (saved) {
 
       savedJobs = savedJobs.filter(job => job.id !== id);
 
-    }else{
+    } else {
 
       savedJobs.push({
         id,
         title,
         company,
         status,
-        location
+        location,
       });
 
     }
@@ -50,48 +48,44 @@ function JobCard({
 
   return (
 
-<div className="job-card">
+    <div className="job-card">
 
-<div>
+      <div>
 
-<h2>{title}</h2>
+        <h2>{title}</h2>
 
-<p>{company}</p>
+        <p>{company}</p>
 
-<span>{location}</span>
+        <span>{location}</span>
 
-</div>
+      </div>
 
-<div className="job-status">
+      <div className="job-status">
 
-<span className="status">
+        <span className="status">
 
-{status}
+          {status}
 
-</span>
+        </span>
 
-<button
-className="heart-btn"
-onClick={handleSave}
->
+        <button
+          className="heart-btn"
+          onClick={handleSave}
+        >
 
-{saved ? "❤️" : "🤍"}
+          {saved ? "❤️" : "🤍"}
 
-</button>
+        </button>
 
-<Link to={`/job/${id}`}>
+        <button>
 
-<button>
+          View Details
 
-View Details
+        </button>
 
-</button>
+      </div>
 
-</Link>
-
-</div>
-
-</div>
+    </div>
 
   );
 

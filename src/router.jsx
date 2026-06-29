@@ -1,3 +1,5 @@
+import FindJobDetails from "./pages/FindJobDetails";
+import FindJobs from "./pages/FindJobs";
 import EditJob from "./pages/EditJob";
 import JobDetails from "./pages/JobDetails";
 import { createBrowserRouter } from "react-router-dom";
@@ -112,6 +114,28 @@ element:(
 
 )
 
+},
+
+{
+  path: "/find-jobs",
+  element: (
+    <ProtectedRoute>
+      <Layout>
+        <FindJobs />
+      </Layout>
+    </ProtectedRoute>
+  ),
+},
+
+{
+  path: "/find-job-details",
+  element: (
+    <ProtectedRoute>
+      <Layout>
+        <FindJobDetails />
+      </Layout>
+    </ProtectedRoute>
+  ),
 },
 
   {
